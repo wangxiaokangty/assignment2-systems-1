@@ -1,0 +1,107 @@
+{
+  "config": {
+    "size": "large",
+    "context_length": 512,
+    "batch_size": 4,
+    "vocab_size": 10000,
+    "d_model": null,
+    "d_ff": null,
+    "num_layers": null,
+    "num_heads": null
+  },
+  "mode": "train",
+  "precision": "fp32",
+  "warmup": 1,
+  "steps": 10,
+  "checkpoint_size": 0,
+  "compile_model": false,
+  "device": "NVIDIA A100-SXM4-80GB",
+  "torch": "2.11.0+cu130",
+  "peak_allocated_bytes": 29514718208,
+  "samples": [
+    {
+      "forward_ms": 274.48196802288294,
+      "loss_ms": 0.8132639341056347,
+      "backward_ms": 587.84642489627,
+      "optimizer_ms": 87.69201207906008,
+      "total_ms": 950.8336689323187
+    },
+    {
+      "forward_ms": 274.22739565372467,
+      "loss_ms": 0.5848952569067478,
+      "backward_ms": 587.1409168466926,
+      "optimizer_ms": 87.63491502031684,
+      "total_ms": 949.5881227776408
+    },
+    {
+      "forward_ms": 274.1906773298979,
+      "loss_ms": 0.6718267686665058,
+      "backward_ms": 587.2649028897285,
+      "optimizer_ms": 87.67399797216058,
+      "total_ms": 949.8014049604535
+    },
+    {
+      "forward_ms": 274.2224489338696,
+      "loss_ms": 0.5951370112597942,
+      "backward_ms": 587.1798619627953,
+      "optimizer_ms": 87.74535125121474,
+      "total_ms": 949.7427991591394
+    },
+    {
+      "forward_ms": 274.1908263415098,
+      "loss_ms": 0.5950578488409519,
+      "backward_ms": 587.2533340007067,
+      "optimizer_ms": 87.6152622513473,
+      "total_ms": 949.6544804424047
+    },
+    {
+      "forward_ms": 274.1928491741419,
+      "loss_ms": 0.5907868035137653,
+      "backward_ms": 587.1769390068948,
+      "optimizer_ms": 87.93525584042072,
+      "total_ms": 949.8958308249712
+    },
+    {
+      "forward_ms": 274.270863737911,
+      "loss_ms": 0.5990019999444485,
+      "backward_ms": 587.3667169362307,
+      "optimizer_ms": 87.69830502569675,
+      "total_ms": 949.9348876997828
+    },
+    {
+      "forward_ms": 274.1906731389463,
+      "loss_ms": 0.5901511758565903,
+      "backward_ms": 587.3868749476969,
+      "optimizer_ms": 87.756740860641,
+      "total_ms": 949.9244401231408
+    },
+    {
+      "forward_ms": 274.21741327270865,
+      "loss_ms": 0.5957027897238731,
+      "backward_ms": 587.2481102123857,
+      "optimizer_ms": 87.78526494279504,
+      "total_ms": 949.8464912176132
+    },
+    {
+      "forward_ms": 274.3077389895916,
+      "loss_ms": 0.593243632465601,
+      "backward_ms": 587.2354032471776,
+      "optimizer_ms": 87.6178708858788,
+      "total_ms": 949.7542567551136
+    }
+  ],
+  "mean": {
+    "forward_ms": 274.24928545951843,
+    "loss_ms": 0.6229067221283913,
+    "backward_ms": 587.3099484946579,
+    "optimizer_ms": 87.71549761295319,
+    "total_ms": 949.8976382892579
+  },
+  "std": {
+    "forward_ms": 0.08585548982728099,
+    "loss_ms": 0.06776181131811643,
+    "backward_ms": 0.1935841591578404,
+    "optimizer_ms": 0.09186644620669165,
+    "total_ms": 0.3300906505852225
+  }
+}
