@@ -37,3 +37,23 @@ class NaiveDDP(nn.Module):
                 grad.div_(self.world_size)
 
 
+class DDP(NaiveDDP):
+    """Overlap per-parameter reductions with autograd's remaining work.
+
+    Call finish_gradient_synchronization after each backward and before step.
+    As with the exercise, every rank must use the same parameters each step.
+    """
+    def __init__(self, module: nn.Module):
+        super().__init__(module)
+        self.pending = []
+        self.hooks = [p.register_post_accumulate_grad_hook(self._reduce)
+                      for p in module.parameters() if p.requires_grad]
+
+    def _reduce(self, parameter):
+        parameter.grad.div_(self.world_size)
+        self.pending.append(dist.all_reduce(parameter.grad, async_op=True))
+
+    def finish_gradient_synchronization(self):
+        for handle in self.pending:
+            handle.wait()
+        self.pending.clear()
