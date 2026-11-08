@@ -1,0 +1,1602 @@
+{
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "torch": "2.11.0+cu130",
+  "batch": 1,
+  "causal": true,
+  "warmup_ms": 10,
+  "rep_ms": 30,
+  "rows": [
+    {
+      "n": 128,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.045707636936144394,
+      "backward_ms": 0.13301861389438704,
+      "end_to_end_ms": 0.466518945289108,
+      "status": "ok"
+    },
+    {
+      "n": 128,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.011686012323832873,
+      "backward_ms": 0.27163927166750934,
+      "end_to_end_ms": 0.4979036621590878,
+      "status": "ok"
+    },
+    {
+      "n": 128,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.049320120864839695,
+      "backward_ms": 0.46114594630292943,
+      "end_to_end_ms": 0.9183867594291424,
+      "status": "ok"
+    },
+    {
+      "n": 128,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.016058450720859745,
+      "backward_ms": 0.23507626627882322,
+      "end_to_end_ms": 0.5027839979346918,
+      "status": "ok"
+    },
+    {
+      "n": 128,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.049872842470282,
+      "backward_ms": 0.47516484495619654,
+      "end_to_end_ms": 0.9573302843741008,
+      "status": "ok"
+    },
+    {
+      "n": 128,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.010647336895788572,
+      "backward_ms": 0.7380385178106802,
+      "end_to_end_ms": 0.9123498737812042,
+      "status": "ok"
+    },
+    {
+      "n": 128,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.04998400082279529,
+      "backward_ms": 0.48863608314066515,
+      "end_to_end_ms": 0.8963754653930665,
+      "status": "ok"
+    },
+    {
+      "n": 128,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.020070399343967437,
+      "backward_ms": 0.6490812615344399,
+      "end_to_end_ms": 0.8583101957075058,
+      "status": "ok"
+    },
+    {
+      "n": 128,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.04590803114626244,
+      "backward_ms": 0.4750131195783615,
+      "end_to_end_ms": 0.8214399982243776,
+      "status": "ok"
+    },
+    {
+      "n": 128,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.012601355304483508,
+      "backward_ms": 0.7654058674971262,
+      "end_to_end_ms": 0.981942858014788,
+      "status": "ok"
+    },
+    {
+      "n": 128,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.050966334197945246,
+      "backward_ms": 0.4981191138426463,
+      "end_to_end_ms": 0.9574006153987005,
+      "status": "ok"
+    },
+    {
+      "n": 128,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.03251046689595291,
+      "backward_ms": 0.615202592836844,
+      "end_to_end_ms": 0.7748754331043788,
+      "status": "ok"
+    },
+    {
+      "n": 128,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.2749473920573067,
+      "backward_ms": 0.11348591369131338,
+      "end_to_end_ms": 0.36416853169600166,
+      "status": "ok"
+    },
+    {
+      "n": 128,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.014262452963430908,
+      "backward_ms": 0.3867062869526091,
+      "end_to_end_ms": 0.6807264560147336,
+      "status": "ok"
+    },
+    {
+      "n": 128,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.05301812177105826,
+      "backward_ms": 0.44207010756839404,
+      "end_to_end_ms": 0.7576177815596262,
+      "status": "ok"
+    },
+    {
+      "n": 128,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.05522586308317642,
+      "backward_ms": 0.6302028088956266,
+      "end_to_end_ms": 0.8072270705149724,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.04563718973784833,
+      "backward_ms": 0.4458852144687072,
+      "end_to_end_ms": 0.7412906587123871,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.012535560569101637,
+      "backward_ms": 0.573088001459837,
+      "end_to_end_ms": 0.44437584397839563,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.092723775613174,
+      "backward_ms": 0.4994457596540451,
+      "end_to_end_ms": 1.0557030391693116,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.022904643981621182,
+      "backward_ms": 0.6026240057415433,
+      "end_to_end_ms": 0.8248475139791315,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.04504177812486887,
+      "backward_ms": 0.478375184292696,
+      "end_to_end_ms": 0.9790537059307098,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.012587845572450542,
+      "backward_ms": 0.7182080037891865,
+      "end_to_end_ms": 0.9435136000315348,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.06072066127022436,
+      "backward_ms": 0.48487489464435174,
+      "end_to_end_ms": 0.9480411452906472,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.03171961860997336,
+      "backward_ms": 0.6411070275951076,
+      "end_to_end_ms": 0.8602879978716373,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.04642133412261804,
+      "backward_ms": 0.4783124917623948,
+      "end_to_end_ms": 0.9809161490864224,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.015473777466393702,
+      "backward_ms": 0.7141574159745248,
+      "end_to_end_ms": 0.9514725537135683,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.055568112073453156,
+      "backward_ms": 0.46721113181632495,
+      "end_to_end_ms": 0.9749119933694601,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.05540595986199059,
+      "backward_ms": 0.3833532640808507,
+      "end_to_end_ms": 0.7067098530327401,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.047035276164744524,
+      "backward_ms": 0.4930166189487164,
+      "end_to_end_ms": 0.9514057167938778,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.018390326165096012,
+      "backward_ms": 0.742201808960207,
+      "end_to_end_ms": 1.0313508531876974,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.2788445077159188,
+      "backward_ms": 0.5507929311242215,
+      "end_to_end_ms": 1.144405335187912,
+      "status": "ok"
+    },
+    {
+      "n": 256,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.09733875718761663,
+      "backward_ms": 0.6052917885152918,
+      "end_to_end_ms": 0.830091635386149,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.0529647652614624,
+      "backward_ms": 0.4293760002280275,
+      "end_to_end_ms": 1.2147711962461472,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.015422927028390283,
+      "backward_ms": 0.7161723856003054,
+      "end_to_end_ms": 0.8398212430805996,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.060461177545435285,
+      "backward_ms": 0.4603206826017258,
+      "end_to_end_ms": 0.7637869732720511,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.037060924423619725,
+      "backward_ms": 0.6199751132064395,
+      "end_to_end_ms": 0.8916727708232018,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.18653405538281878,
+      "backward_ms": 0.5348010632726882,
+      "end_to_end_ms": 1.067764867906985,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.016736904032907243,
+      "backward_ms": 0.20645161213413363,
+      "end_to_end_ms": 0.785919996102651,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.1504792393673034,
+      "backward_ms": 0.5865425453944639,
+      "end_to_end_ms": 1.1122773339351018,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.053992106318473815,
+      "backward_ms": 0.3521740782260895,
+      "end_to_end_ms": 0.5320878269824576,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.05401776517773497,
+      "backward_ms": 0.47702016174793244,
+      "end_to_end_ms": 0.9409462852137429,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.02287330261843149,
+      "backward_ms": 0.7634415491934745,
+      "end_to_end_ms": 0.9368540706305668,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.06638670781484017,
+      "backward_ms": 0.46266367971897127,
+      "end_to_end_ms": 0.9002611637115479,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.10227952678413953,
+      "backward_ms": 0.6373831116490893,
+      "end_to_end_ms": 0.9489749352137248,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.055288183296682274,
+      "backward_ms": 0.5072979568218698,
+      "end_to_end_ms": 0.9838743673430549,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.02683123786534582,
+      "backward_ms": 0.7220851625165632,
+      "end_to_end_ms": 0.9699474275112152,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.07717236451619913,
+      "backward_ms": 0.7389622793665954,
+      "end_to_end_ms": 0.3388509045947682,
+      "status": "ok"
+    },
+    {
+      "n": 512,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.18558836135674606,
+      "backward_ms": 0.6599826284817287,
+      "end_to_end_ms": 0.9213687604473483,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.0708983222605618,
+      "backward_ms": 0.44737669631190924,
+      "end_to_end_ms": 0.746136215892998,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.023331721378273742,
+      "backward_ms": 0.7601694184191087,
+      "end_to_end_ms": 0.949353931279018,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.08554905515909195,
+      "backward_ms": 0.4951485233462375,
+      "end_to_end_ms": 0.8667664527893066,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.06489152409188398,
+      "backward_ms": 0.6588799972087145,
+      "end_to_end_ms": 0.9162240028381348,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.07156152253554872,
+      "backward_ms": 0.5179946683347225,
+      "end_to_end_ms": 1.0057649268553808,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.02499869791790843,
+      "backward_ms": 0.7271862909907386,
+      "end_to_end_ms": 0.9252522647380829,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.31196070240254986,
+      "backward_ms": 0.5419008016586304,
+      "end_to_end_ms": 1.1603255634722502,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.0975677387650348,
+      "backward_ms": 0.42692922628842866,
+      "end_to_end_ms": 0.4292492068038796,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.07248037000154627,
+      "backward_ms": 0.440601097018111,
+      "end_to_end_ms": 0.8427830284292047,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.034228148559729256,
+      "backward_ms": 0.589338945715051,
+      "end_to_end_ms": 0.6875468138101939,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.10145977891304277,
+      "backward_ms": 0.4673115909099579,
+      "end_to_end_ms": 0.8113919999450445,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.18414933482805887,
+      "backward_ms": 0.2210158796897575,
+      "end_to_end_ms": 0.39425735503940257,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.06020636381361428,
+      "backward_ms": 0.11724167988624101,
+      "end_to_end_ms": 0.336432000156492,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.03668181719315564,
+      "backward_ms": 0.7569460502037635,
+      "end_to_end_ms": 1.0076160033543904,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.10714041281106143,
+      "backward_ms": 0.48250008326895694,
+      "end_to_end_ms": 0.767327082157135,
+      "status": "ok"
+    },
+    {
+      "n": 1024,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.3362353521008645,
+      "backward_ms": 0.6333935453045753,
+      "end_to_end_ms": 0.8592998433113098,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.12802818622610984,
+      "backward_ms": 0.4931098959947887,
+      "end_to_end_ms": 0.9319628763198853,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.03819329205969846,
+      "backward_ms": 0.790617040965868,
+      "end_to_end_ms": 0.7481002608935038,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.18528773611063484,
+      "backward_ms": 0.4083761921743067,
+      "end_to_end_ms": 0.7951798898833139,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.12103136351941961,
+      "backward_ms": 0.6250192589230008,
+      "end_to_end_ms": 0.843680003657937,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.12958074050042237,
+      "backward_ms": 0.46741661352989,
+      "end_to_end_ms": 0.9592149317264557,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.041758590430583595,
+      "backward_ms": 0.7421844225180777,
+      "end_to_end_ms": 0.8906240016222,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.18821119980679618,
+      "backward_ms": 0.4922026657696926,
+      "end_to_end_ms": 0.921864257704827,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.18831245216091028,
+      "backward_ms": 0.7910912081599235,
+      "end_to_end_ms": 1.3884708668504442,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.13352533041809997,
+      "backward_ms": 0.5679427401015633,
+      "end_to_end_ms": 1.00033422531905,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.05949019321738041,
+      "backward_ms": 0.7624106655518214,
+      "end_to_end_ms": 0.9822719991207123,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.22591209687568523,
+      "backward_ms": 0.4643031562629499,
+      "end_to_end_ms": 0.7460977766248915,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.3384739658871635,
+      "backward_ms": 0.6726826652884483,
+      "end_to_end_ms": 0.9110296791599642,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.11513820862204864,
+      "backward_ms": 0.49094236355561477,
+      "end_to_end_ms": 0.7508845712457385,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.06484855904237374,
+      "backward_ms": 0.79987200597922,
+      "end_to_end_ms": 1.0245649609072456,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.24473599774736754,
+      "backward_ms": 0.43846572975854614,
+      "end_to_end_ms": 0.6725189138103176,
+      "status": "ok"
+    },
+    {
+      "n": 2048,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.6687288913461897,
+      "backward_ms": 0.6185747705973111,
+      "end_to_end_ms": 1.2747825157074701,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.40697483582930133,
+      "backward_ms": 0.4741705162184579,
+      "end_to_end_ms": 0.8760320007801056,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.0590779747068882,
+      "backward_ms": 0.638634670864452,
+      "end_to_end_ms": 0.7391573349634807,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.5835776016116142,
+      "backward_ms": 0.7983028138125384,
+      "end_to_end_ms": 1.3713515934191252,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.21425981092311086,
+      "backward_ms": 0.6290476425834324,
+      "end_to_end_ms": 0.8346623957157135,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.38665143081120085,
+      "backward_ms": 0.4561919983890321,
+      "end_to_end_ms": 0.8521992275791783,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.06674749320241767,
+      "backward_ms": 0.7271735668182373,
+      "end_to_end_ms": 0.866372267405192,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.6087167888879776,
+      "backward_ms": 0.8197513864590571,
+      "end_to_end_ms": 1.4173525333404542,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.34010229198659053,
+      "backward_ms": 0.6801723218881167,
+      "end_to_end_ms": 1.0116725701552172,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.39530123526399785,
+      "backward_ms": 0.46200055192256795,
+      "end_to_end_ms": 0.7889280002564192,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.09238755702972412,
+      "backward_ms": 1.0072320401668549,
+      "end_to_end_ms": 1.095493815161965,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.7173851438931056,
+      "backward_ms": 1.0536515090776526,
+      "end_to_end_ms": 1.7641471783320108,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.689408004283905,
+      "backward_ms": 0.9865508590425763,
+      "end_to_end_ms": 1.6725119799375534,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 0.41236859449633845,
+      "backward_ms": 0.4633206144357339,
+      "end_to_end_ms": 0.8359594682852427,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.1269108384847641,
+      "backward_ms": 1.6569782665797643,
+      "end_to_end_ms": 1.7771178642908732,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 0.9466690332801254,
+      "backward_ms": 1.574399970471859,
+      "end_to_end_ms": 2.517178253694014,
+      "status": "ok"
+    },
+    {
+      "n": 4096,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 1.6150889607036816,
+      "backward_ms": 1.9952640334765117,
+      "end_to_end_ms": 3.6131109510149275,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 1.4935040341483221,
+      "backward_ms": 1.4275162500493668,
+      "end_to_end_ms": 2.89427916208903,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.14663083677731673,
+      "backward_ms": 2.3058617331764917,
+      "end_to_end_ms": 2.446429122578014,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 2.212181250254313,
+      "backward_ms": 3.0648319721221924,
+      "end_to_end_ms": 5.2699134826660154,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 0.6268980564215244,
+      "backward_ms": 2.2904087630185215,
+      "end_to_end_ms": 2.9110044373406305,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 1.4955520298745897,
+      "backward_ms": 1.3948160037398338,
+      "end_to_end_ms": 2.8650496006011963,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.17067385378636812,
+      "backward_ms": 2.5178112983703613,
+      "end_to_end_ms": 2.6826751232147217,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 2.326784054438273,
+      "backward_ms": 3.001799080106947,
+      "end_to_end_ms": 5.317427158355713,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 1.021214747428894,
+      "backward_ms": 2.499304684725675,
+      "end_to_end_ms": 3.5133440494537354,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 1.5335303404751945,
+      "backward_ms": 1.4337204554501701,
+      "end_to_end_ms": 2.941496875551012,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.20920076132530258,
+      "backward_ms": 3.8148388181413924,
+      "end_to_end_ms": 4.2103954042707175,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 2.770147615008884,
+      "backward_ms": 4.124262428283691,
+      "end_to_end_ms": 6.887167930603027,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 2.3456426660219827,
+      "backward_ms": 3.7858742645808627,
+      "end_to_end_ms": 6.107648015022278,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 1.5791284406886381,
+      "backward_ms": 1.5002530813217163,
+      "end_to_end_ms": 3.0584603945414224,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.33757316008690863,
+      "backward_ms": 6.124032020568848,
+      "end_to_end_ms": 6.453503966331482,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 3.72560453414917,
+      "backward_ms": 5.896448016166687,
+      "end_to_end_ms": 9.601706822713217,
+      "status": "ok"
+    },
+    {
+      "n": 8192,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 4.531029383341472,
+      "backward_ms": 7.464618682861328,
+      "end_to_end_ms": 11.369472026824951,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 4.806655963261922,
+      "backward_ms": 5.3137407302856445,
+      "end_to_end_ms": 10.108928203582764,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.424310154066636,
+      "backward_ms": 9.11735471089681,
+      "end_to_end_ms": 9.530709266662598,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 8.248319943745932,
+      "backward_ms": 11.957248210906982,
+      "end_to_end_ms": 20.06220817565918,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 2.2425599694252014,
+      "backward_ms": 9.09824021657308,
+      "end_to_end_ms": 11.337728023529053,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 4.928716659545898,
+      "backward_ms": 5.279334354400635,
+      "end_to_end_ms": 10.059775829315186,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.5430295897084613,
+      "backward_ms": 9.891327857971191,
+      "end_to_end_ms": 10.4268798828125,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 8.620714823404947,
+      "backward_ms": 12.510720252990723,
+      "end_to_end_ms": 20.986879348754883,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 3.421312063932419,
+      "backward_ms": 9.851904392242432,
+      "end_to_end_ms": 13.273087978363037,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 5.03111686706543,
+      "backward_ms": 5.38152961730957,
+      "end_to_end_ms": 10.27839994430542,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.6348530603082556,
+      "backward_ms": 14.669312000274658,
+      "end_to_end_ms": 15.114239692687988,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 10.50214433670044,
+      "backward_ms": 16.348159790039062,
+      "end_to_end_ms": 26.877952575683594,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 6.52672004699707,
+      "backward_ms": 14.615551948547363,
+      "end_to_end_ms": 20.89676856994629,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 5.197824001312256,
+      "backward_ms": 5.571584033966064,
+      "end_to_end_ms": 10.647552013397217,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 0.9836307741128482,
+      "backward_ms": 23.995391845703125,
+      "end_to_end_ms": 24.997888565063477,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 14.254591941833496,
+      "backward_ms": 23.794687271118164,
+      "end_to_end_ms": 38.00678253173828,
+      "status": "ok"
+    },
+    {
+      "n": 16384,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 12.571648120880127,
+      "backward_ms": 23.91756820678711,
+      "end_to_end_ms": 36.483070373535156,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 19.21843147277832,
+      "backward_ms": 22.69900894165039,
+      "end_to_end_ms": 41.86316680908203,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 1.352857631444931,
+      "backward_ms": 36.0263671875,
+      "end_to_end_ms": 37.37907028198242,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 36.927486419677734,
+      "backward_ms": 47.7020149230957,
+      "end_to_end_ms": 83.56147003173828,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 7.092736005783081,
+      "backward_ms": 35.992576599121094,
+      "end_to_end_ms": 43.06739044189453,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 19.661823272705078,
+      "backward_ms": 21.944320678710938,
+      "end_to_end_ms": 41.13100814819336,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 1.664127990603447,
+      "backward_ms": 39.040000915527344,
+      "end_to_end_ms": 40.71014404296875,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 38.38054275512695,
+      "backward_ms": 49.45920181274414,
+      "end_to_end_ms": 86.98162841796875,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 11.660288333892822,
+      "backward_ms": 39.012351989746094,
+      "end_to_end_ms": 50.6429443359375,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 20.08780860900879,
+      "backward_ms": 22.432767868041992,
+      "end_to_end_ms": 42.10073471069336,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 1.9175131576401847,
+      "backward_ms": 56.89548873901367,
+      "end_to_end_ms": 58.804222106933594,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 45.28230285644531,
+      "backward_ms": 63.77062225341797,
+      "end_to_end_ms": 108.18048095703125,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 22.037504196166992,
+      "backward_ms": 56.82380676269531,
+      "end_to_end_ms": 78.81625366210938,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 20.793344497680664,
+      "backward_ms": 23.223295211791992,
+      "end_to_end_ms": 43.50668716430664,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 3.2619520127773285,
+      "backward_ms": 92.80307006835938,
+      "end_to_end_ms": 96.0215072631836,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 58.80729675292969,
+      "backward_ms": 92.2245101928711,
+      "end_to_end_ms": 150.86285400390625,
+      "status": "ok"
+    },
+    {
+      "n": 32768,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 45.22496032714844,
+      "backward_ms": 92.64640045166016,
+      "end_to_end_ms": 137.90208435058594,
+      "status": "ok"
+    },
+    {
+      "n": 65536,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 79.09171295166016,
+      "backward_ms": 87.73734283447266,
+      "end_to_end_ms": 166.8290557861328,
+      "status": "ok"
+    },
+    {
+      "n": 65536,
+      "d": 16,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 4.9000448226928714,
+      "backward_ms": 134.56793212890625,
+      "end_to_end_ms": 140.77850341796875,
+      "status": "ok"
+    },
+    {
+      "n": 65536,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 146.07872009277344,
+      "status": "backward OOM"
+    },
+    {
+      "n": 65536,
+      "d": 16,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 26.159103393554688,
+      "backward_ms": 134.64370727539062,
+      "end_to_end_ms": 160.79461669921875,
+      "status": "ok"
+    },
+    {
+      "n": 65536,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 81.12435150146484,
+      "backward_ms": 87.89401245117188,
+      "end_to_end_ms": 167.11474609375,
+      "status": "ok"
+    },
+    {
+      "n": 65536,
+      "d": 32,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 6.0241920948028564,
+      "backward_ms": 146.58560180664062,
+      "end_to_end_ms": 152.60057067871094,
+      "status": "ok"
+    },
+    {
+      "n": 65536,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 151.78445434570312,
+      "status": "backward OOM"
+    },
+    {
+      "n": 65536,
+      "d": 32,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 43.40019226074219,
+      "backward_ms": 146.59890747070312,
+      "end_to_end_ms": 190.0009002685547,
+      "status": "ok"
+    },
+    {
+      "n": 65536,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 82.82662200927734,
+      "backward_ms": 89.46086120605469,
+      "end_to_end_ms": 170.18162536621094,
+      "status": "ok"
+    },
+    {
+      "n": 65536,
+      "d": 64,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 6.644480109214783,
+      "backward_ms": 219.31007385253906,
+      "end_to_end_ms": 225.91180419921875,
+      "status": "ok"
+    },
+    {
+      "n": 65536,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 179.6300811767578,
+      "status": "backward OOM"
+    },
+    {
+      "n": 65536,
+      "d": 64,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 83.33628845214844,
+      "backward_ms": 219.2321014404297,
+      "end_to_end_ms": 304.0204772949219,
+      "status": "ok"
+    },
+    {
+      "n": 65536,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "pytorch",
+      "forward_ms": 87.3697280883789,
+      "backward_ms": 94.78553771972656,
+      "end_to_end_ms": 180.19532775878906,
+      "status": "ok"
+    },
+    {
+      "n": 65536,
+      "d": 128,
+      "dtype": "torch.bfloat16",
+      "implementation": "flash",
+      "forward_ms": 10.544640064239502,
+      "backward_ms": 364.0655822753906,
+      "end_to_end_ms": 375.8499755859375,
+      "status": "ok"
+    },
+    {
+      "n": 65536,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "pytorch",
+      "forward_ms": 235.68896484375,
+      "status": "backward OOM"
+    },
+    {
+      "n": 65536,
+      "d": 128,
+      "dtype": "torch.float32",
+      "implementation": "flash",
+      "forward_ms": 171.53797912597656,
+      "backward_ms": 366.84185791015625,
+      "end_to_end_ms": 535.7496337890625,
+      "status": "ok"
+    }
+  ]
+}

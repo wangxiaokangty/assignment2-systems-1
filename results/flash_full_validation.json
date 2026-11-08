@@ -1,0 +1,14 @@
+{
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "dtype": "bfloat16",
+  "batch": 1,
+  "head_dim": 128,
+  "seed": 42,
+  "reference": "explicit PyTorch attention in bfloat16",
+  "rows": [
+    {"nq": 1024, "nk": 1024, "causal": true, "output_max_error": 0.0078125, "dq_max_error": 0.0078125, "dk_max_error": 0.01171875, "dv_max_error": 0.015625},
+    {"nq": 1024, "nk": 1024, "causal": false, "output_max_error": 0.00390625, "dq_max_error": 0.00341796875, "dk_max_error": 0.00390625, "dv_max_error": 0.00390625},
+    {"nq": 64, "nk": 128, "causal": true, "output_max_error": 0.0078125, "dq_max_error": 0.0078125, "dk_max_error": 0.0078125, "dv_max_error": 0.015625},
+    {"nq": 64, "nk": 128, "causal": false, "output_max_error": 0.005859375, "dq_max_error": 0.0078125, "dk_max_error": 0.01171875, "dv_max_error": 0.0078125}
+  ]
+}
