@@ -126,6 +126,9 @@ def _train(device, config):
         elapsed = 1000 * (time.perf_counter() - start)
         after_bytes = torch.cuda.memory_allocated(device)
         after_peak = torch.cuda.max_memory_allocated(device)
+        if iteration == 0:
+            first_step = {"before_optimizer_bytes": before_bytes, "before_optimizer_peak_bytes": before_peak,
+                          "after_optimizer_bytes": after_bytes, "after_optimizer_peak_bytes": after_peak}
         if iteration >= config["warmup"]:
             samples.append({"step_ms": elapsed, "sync_ms": sync_ms, "before_optimizer_bytes": before_bytes,
                             "before_optimizer_peak_bytes": before_peak, "after_optimizer_bytes": after_bytes,
@@ -139,7 +142,7 @@ def _train(device, config):
                       for v in state.values() if isinstance(v, torch.Tensor))
     return {"parameter_count": parameter_count, "initial_bytes": initial_bytes, "initial_peak_bytes": initial_peak,
             "local_parameter_bytes": sum(p.numel() * p.element_size() for p in model.parameters()),
-            "optimizer_state_bytes": state_bytes,
+            "optimizer_state_bytes": state_bytes, "first_step": first_step,
             "mean_step_ms": statistics.mean(row["step_ms"] for row in samples),
             "std_step_ms": statistics.pstdev(row["step_ms"] for row in samples),
             "mean_sync_ms": statistics.mean(row["sync_ms"] for row in samples), "samples": samples}
@@ -176,3 +179,21 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def result_rows(path):
+    """Flatten saved measurements into a notebook-friendly table."""
+    data = json.loads(Path(path).read_text())
+    rows = []
+    for rank, values in enumerate(data["ranks"]):
+        if isinstance(values, list):
+            rows.extend({"world_size": data["world_size"], "rank": rank,
+                         **{k: v for k, v in row.items() if k != "samples_ms"}} for row in values)
+        else:
+            rows.append({"mode": data["config"]["mode"], "rank": rank,
+                         "step_ms": values["mean_step_ms"], "step_std_ms": values["std_step_ms"],
+                         "exposed_sync_ms": values["mean_sync_ms"],
+                         "initial_GiB": values["initial_bytes"] / 2**30,
+                         "peak_GiB": max(s["after_optimizer_peak_bytes"] for s in values["samples"]) / 2**30,
+                         "optimizer_state_GiB": values["optimizer_state_bytes"] / 2**30})
+    return rows
