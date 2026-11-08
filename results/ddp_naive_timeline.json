@@ -1,0 +1,11 @@
+{
+  "communication_kernel_ms": 85.914275,
+  "communication_overlapped_compute_ms": 0.0,
+  "communication_overlap_fraction": 0.0,
+  "phase_gpu_span_ms": {
+    "optimizer_step": 360.071919,
+    "gradient_synchronization": 100.922855,
+    "backward": 925.605365,
+    "forward": 426.748125
+  }
+}

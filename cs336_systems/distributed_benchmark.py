@@ -197,3 +197,69 @@ def result_rows(path):
                          "peak_GiB": max(s["after_optimizer_peak_bytes"] for s in values["samples"]) / 2**30,
                          "optimizer_state_GiB": values["optimizer_state_bytes"] / 2**30})
     return rows
+
+
+def render_nsys_timeline(sqlite_path, output_path, title, detail_phase="backward"):
+    """Render actual Nsight CUDA timestamps, retaining the report as source.
+
+    This is an exported trace visualization, not a screenshot of the Nsight GUI.
+    CUDA launch correlations assign asynchronous kernels to their CPU NVTX phase.
+    """
+    import sqlite3
+    import matplotlib.pyplot as plt
+    connection = sqlite3.connect(sqlite_path)
+    pid = connection.execute("SELECT min(globalPid) FROM CUPTI_ACTIVITY_KIND_KERNEL WHERE deviceId=0").fetchone()[0]
+    phases = connection.execute(
+        "SELECT text,start,end FROM NVTX_EVENTS WHERE globalTid / 16777216 = ? "
+        "AND text IN ('forward','backward','gradient_synchronization','optimizer_step') ORDER BY start",
+        (pid >> 24,)).fetchall()
+    phases = phases[-4:]
+    launch = dict(connection.execute(
+        "SELECT correlationId,start FROM CUPTI_ACTIVITY_KIND_RUNTIME WHERE globalTid / 16777216 = ?", (pid >> 24,)))
+    kernels = connection.execute(
+        "SELECT k.start,k.end,s.value,k.correlationId FROM CUPTI_ACTIVITY_KIND_KERNEL k "
+        "JOIN StringIds s ON s.id=k.shortName WHERE globalPid=? ORDER BY k.start", (pid,)).fetchall()
+    selected = []
+    for start, end, name, correlation in kernels:
+        cpu_start = launch.get(correlation, -1)
+        phase = next((text for text, a, b in phases if a <= cpu_start <= b), None)
+        if phase is not None:
+            selected.append((start, end, name, phase))
+    origin = min(row[0] for row in selected)
+    finish = max(row[1] for row in selected)
+    compute = [(a, b) for a, b, name, _ in selected if "nccl" not in name.lower()]
+    communication = [(a, b) for a, b, name, _ in selected if "nccl" in name.lower()]
+    overlap_ns = sum(max(0, min(b, d) - max(a, c)) for a, b in communication for c, d in compute)
+    communication_ns = sum(b - a for a, b in communication)
+    fig, axes = plt.subplots(2, 1, figsize=(14, 5), constrained_layout=True)
+    for axis in axes:
+        axis.broken_barh([((a-origin)/1e6,(b-a)/1e6) for a,b in compute], (1.1, .7), facecolors="#3178a8")
+        axis.broken_barh([((a-origin)/1e6,(b-a)/1e6) for a,b in communication], (.1, .7), facecolors="#e28224")
+        axis.set_yticks([.45, 1.45], ["NCCL kernels", "Compute kernels"])
+        axis.set_xlabel("Milliseconds from first GPU kernel of measured step")
+        axis.grid(axis="x", alpha=.25)
+    axes[0].set_xlim(0, (finish-origin)/1e6)
+    # Zoom into a backward portion containing reductions, or the backward tail.
+    backward = [(a,b) for a,b,_,phase in selected if phase == detail_phase]
+    pivot = (backward[len(backward)//2][0] if any(phase == detail_phase and "nccl" in name.lower()
+             for _,_,name,phase in selected) else max(b for a,b in backward))
+    axes[1].set_xlim(max(0,(pivot-origin)/1e6-50), (pivot-origin)/1e6+100)
+    axes[0].set_title(title + " — Nsight Systems CUDA trace export (rank 0)")
+    axes[1].set_title(detail_phase.capitalize() + " detail; bars use recorded kernel start/end times")
+    fig.savefig(output_path, dpi=160)
+    plt.close(fig)
+    stats = {"communication_kernel_ms": communication_ns/1e6,
+             "communication_overlapped_compute_ms": overlap_ns/1e6,
+             "communication_overlap_fraction": overlap_ns / communication_ns if communication_ns else 0,
+             "phase_gpu_span_ms": {phase: (max(b for a,b,n,p in selected if p==phase)-min(a for a,b,n,p in selected if p==phase))/1e6
+                                    for phase in {p for a,b,n,p in selected}}}
+    stats["phase_communication"] = {}
+    for phase in {p for a,b,n,p in selected}:
+        phase_comm = [(a,b) for a,b,n,p in selected if p == phase and "nccl" in n.lower()]
+        comm_ns = sum(b-a for a,b in phase_comm)
+        hidden_ns = sum(max(0, min(b,d)-max(a,c)) for a,b in phase_comm for c,d in compute)
+        stats["phase_communication"][phase] = {"kernel_ms": comm_ns / 1e6,
+                                             "overlapped_ms": hidden_ns / 1e6}
+    Path(output_path).with_suffix(".json").write_text(json.dumps(stats, indent=2))
+    connection.close()
+    return stats

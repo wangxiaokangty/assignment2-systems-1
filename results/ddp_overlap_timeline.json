@@ -1,0 +1,10 @@
+{
+  "communication_kernel_ms": 128.737969,
+  "communication_overlapped_compute_ms": 124.596941,
+  "communication_overlap_fraction": 0.9678336699563748,
+  "phase_gpu_span_ms": {
+    "optimizer_step": 290.629868,
+    "backward": 977.416613,
+    "forward": 426.790912
+  }
+}

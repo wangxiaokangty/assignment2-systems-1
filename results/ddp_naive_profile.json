@@ -1,0 +1,75 @@
+{
+  "world_size": 2,
+  "backend": "nccl",
+  "device": "NVIDIA A100-SXM4-80GB",
+  "config": {
+    "command": "train",
+    "world_size": 2,
+    "backend": "nccl",
+    "warmup": 1,
+    "steps": 1,
+    "mode": "naive",
+    "size": "xl",
+    "sequence": 512,
+    "batch": 4,
+    "bf16": false,
+    "trace": null,
+    "output": "results/ddp_naive_profile.json"
+  },
+  "ranks": [
+    {
+      "parameter_count": 3406809600,
+      "initial_bytes": 13762357248,
+      "initial_peak_bytes": 13762357248,
+      "local_parameter_bytes": 13627238400,
+      "optimizer_state_bytes": 27254476800,
+      "first_step": {
+        "before_optimizer_bytes": 27449299968,
+        "before_optimizer_peak_bytes": 28674698752,
+        "after_optimizer_bytes": 54704497664,
+        "after_optimizer_peak_bytes": 55217218560
+      },
+      "mean_step_ms": 1816.6219224222004,
+      "std_step_ms": 0.0,
+      "mean_sync_ms": 103.41596696525812,
+      "samples": [
+        {
+          "step_ms": 1816.6219224222004,
+          "sync_ms": 103.41596696525812,
+          "before_optimizer_bytes": 54702793728,
+          "before_optimizer_peak_bytes": 55928552960,
+          "after_optimizer_bytes": 54703154176,
+          "after_optimizer_peak_bytes": 55928552960,
+          "loss": 8.356855392456055
+        }
+      ]
+    },
+    {
+      "parameter_count": 3406809600,
+      "initial_bytes": 13762357248,
+      "initial_peak_bytes": 13762357248,
+      "local_parameter_bytes": 13627238400,
+      "optimizer_state_bytes": 27254476800,
+      "first_step": {
+        "before_optimizer_bytes": 27449299968,
+        "before_optimizer_peak_bytes": 28674698752,
+        "after_optimizer_bytes": 54704497664,
+        "after_optimizer_peak_bytes": 55217218560
+      },
+      "mean_step_ms": 1813.4680832736194,
+      "std_step_ms": 0.0,
+      "mean_sync_ms": 101.75189096480608,
+      "samples": [
+        {
+          "step_ms": 1813.4680832736194,
+          "sync_ms": 101.75189096480608,
+          "before_optimizer_bytes": 54702793728,
+          "before_optimizer_peak_bytes": 55928552960,
+          "after_optimizer_bytes": 54703154176,
+          "after_optimizer_peak_bytes": 55928552960,
+          "loss": 8.349806785583496
+        }
+      ]
+    }
+  ]
+}
