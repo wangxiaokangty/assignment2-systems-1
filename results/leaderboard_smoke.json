@@ -1,0 +1,35 @@
+{
+  "config": {
+    "vocab_size": 1024,
+    "context_length": 128,
+    "d_model": 256,
+    "d_ff": 704,
+    "num_layers": 2,
+    "num_heads": 4
+  },
+  "batch": 2,
+  "devices": [
+    "NVIDIA A100-SXM4-80GB",
+    "NVIDIA A100-SXM4-80GB"
+  ],
+  "seconds": [
+    0.0609377920627594,
+    0.03397161979228258,
+    0.03308510407805443
+  ],
+  "best_seconds": 0.03308510407805443,
+  "median_seconds": 0.03397161979228258,
+  "losses": [
+    6.138158798217773,
+    5.147007942199707,
+    4.235320568084717
+  ],
+  "peak_allocated_gb": [
+    0.032830464,
+    0.033358848
+  ],
+  "total_seconds": 7.042216729838401,
+  "warmup": 1,
+  "torch_version": "2.11.0+cu130",
+  "official_B200_score": false
+}

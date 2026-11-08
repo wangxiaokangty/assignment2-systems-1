@@ -1,0 +1,40 @@
+{
+  "config": {
+    "vocab_size": 151936,
+    "context_length": 32768,
+    "d_model": 4096,
+    "d_ff": 11008,
+    "num_layers": 34,
+    "num_heads": 32
+  },
+  "batch": 2,
+  "devices": [
+    "NVIDIA A100-SXM4-80GB",
+    "NVIDIA A100-SXM4-80GB"
+  ],
+  "seconds": [
+    73.18546201707795,
+    73.17719346797094,
+    73.14484079694375
+  ],
+  "best_seconds": 73.14484079694375,
+  "median_seconds": 73.17719346797094,
+  "losses": [
+    11.554783821105957,
+    12.716702461242676,
+    11.033381462097168
+  ],
+  "peak_allocated_gb": [
+    68.704354304,
+    69.949064192
+  ],
+  "total_seconds": 298.4470735490322,
+  "warmup": 1,
+  "torch_version": "2.11.0+cu130",
+  "official_B200_score": false,
+  "cold_compilation_cache": true,
+  "process_wall_seconds": 302.0750286420807,
+  "under_10_minutes": true,
+  "cache_policy": "Fresh isolated TRITON_CACHE_DIR and TORCHINDUCTOR_CACHE_DIR, absent before process launch",
+  "allocator": "expandable_segments:True"
+}

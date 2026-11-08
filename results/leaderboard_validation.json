@@ -1,0 +1,28 @@
+{
+  "device": "NVIDIA A100-SXM4-80GB",
+  "config": {
+    "vocab_size": 256,
+    "context_length": 32,
+    "d_model": 128,
+    "d_ff": 352,
+    "num_layers": 2,
+    "num_heads": 2
+  },
+  "dtype": "bfloat16",
+  "maximum_logit_absolute_error": 0.0234375,
+  "optimized_loss": 5.868326187133789,
+  "reference_loss": 5.867444038391113,
+  "maximum_parameter_gradient_relative_l2_error": 0.014787974767386913,
+  "fused_adamw_fp32_three_step_reference_comparison": "passed (atol=1e-6, rtol=1e-5)",
+  "chunked_cross_entropy_fp32_cpu_loss_and_gradient_comparison": "passed",
+  "reproduce": "GPU verification button in notebooks/leaderboard.py; random initializations produce different individual error values.",
+  "tuned_full_model_validation": {
+    "devices": 2,
+    "sequence_length": 1024,
+    "width": 256,
+    "head_dim": 128,
+    "layers": 2,
+    "status": "passed notebook GPU validation",
+    "maximum_parameter_gradient_relative_l2_error_rounded": 0.0141
+  }
+}

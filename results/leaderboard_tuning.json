@@ -1,0 +1,121 @@
+{
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "physical_gpu": 6,
+  "dtype": "bfloat16",
+  "batch": 2,
+  "heads": 32,
+  "sequence_length": 32768,
+  "head_dim": 128,
+  "causal": true,
+  "method": "Existing flash_fwd_kernel and _flash_bwd kernels; triton.testing.do_bench, 50 ms warmup budget, 200 ms repetition budget. Inputs allocated before timing. Compilations excluded. dQ and dK/dV timed separately.",
+  "validation": {
+    "sequence_length": 1024,
+    "head_batches": 2,
+    "reference": "Explicit PyTorch BF16 causal attention and its autograd gradients",
+    "atol": 0.04,
+    "rtol": 0.04,
+    "all_completed_candidates_passed": true
+  },
+  "selected": {
+    "forward": {
+      "query_tile": 128,
+      "key_tile": 128,
+      "num_warps": 8
+    },
+    "backward": {
+      "tile": 32,
+      "num_warps": 4
+    }
+  },
+  "notes": [
+    "128x128 forward with four warps and 64x64 backward with four warps were interrupted after severe latency; no timing is claimed for incomplete cases.",
+    "No code or tuning commit was made; the parent agent applies selected parameters to the leaderboard Full subclass.",
+    "Each candidate uses the same hardware and full workload shape. The two 8-warp backward candidates used a fresh random validation input, explaining slightly different maximum errors."
+  ],
+  "rows": [
+    {
+      "phase": "forward",
+      "bq": 32,
+      "bk": 64,
+      "warps": 4,
+      "max_error": 0.015625,
+      "ms": 171.63775634765625
+    },
+    {
+      "phase": "forward",
+      "bq": 64,
+      "bk": 64,
+      "warps": 4,
+      "max_error": 0.015625,
+      "ms": 190.9053497314453
+    },
+    {
+      "phase": "forward",
+      "bq": 64,
+      "bk": 128,
+      "warps": 4,
+      "max_error": 0.015625,
+      "ms": 153.26002502441406
+    },
+    {
+      "phase": "forward",
+      "bq": 128,
+      "bk": 64,
+      "warps": 4,
+      "max_error": 0.015625,
+      "ms": 4929.369140625
+    },
+    {
+      "phase": "forward",
+      "bq": 128,
+      "bk": 64,
+      "warps": 8,
+      "max_error": 0.015625,
+      "ms": 123.21177673339844
+    },
+    {
+      "phase": "forward",
+      "bq": 128,
+      "bk": 128,
+      "warps": 8,
+      "max_error": 0.015625,
+      "ms": 100.23731231689453
+    },
+    {
+      "phase": "backward",
+      "tile": 32,
+      "warps": 4,
+      "max_errors": [
+        0.015625,
+        0.015625,
+        0.015625
+      ],
+      "dq_ms": 205.13690185546875,
+      "dkv_ms": 1174.045654296875
+    },
+    {
+      "phase": "backward",
+      "tile": 32,
+      "warps": 8,
+      "max_errors": [
+        0.015625,
+        0.0159912109375,
+        0.015625
+      ],
+      "dq_ms": 380.15692138671875,
+      "dkv_ms": 1867.6746826171875
+    },
+    {
+      "phase": "backward",
+      "tile": 64,
+      "warps": 8,
+      "max_errors": [
+        0.015625,
+        0.0159912109375,
+        0.015625
+      ],
+      "dq_ms": 215.53561401367188,
+      "dkv_ms": 2153.76171875
+    }
+  ]
+}

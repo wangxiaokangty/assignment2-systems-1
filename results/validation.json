@@ -1,0 +1,22 @@
+{
+  "existing_tests": {
+    "command": "CUDA_VISIBLE_DEVICES=0,1 uv run pytest tests -q",
+    "passed": 14,
+    "failed": 0,
+    "seconds": 53.1
+  },
+  "notebooks": {
+    "count": 27,
+    "export_command": "uv run marimo export html notebooks/<problem>.py -o /tmp/<problem>.html",
+    "successful_html_exports": 27
+  },
+  "core_lint": {
+    "command": "uv run ruff check cs336_systems tests/adapters.py",
+    "status": "passed"
+  },
+  "new_test_files": 0,
+  "hardware": "8 x NVIDIA A100-SXM4-80GB; independent experiments assigned disjoint GPU sets",
+  "notes": "Benchmarks were run on local A100 GPUs, not the handout's B200 hardware. Notebook checks report formatting warnings but no execution errors.",
+  "problem_notebook_mapping": "27 PDF problems exactly match 27 notebook filenames",
+  "problem_commits": 27
+}

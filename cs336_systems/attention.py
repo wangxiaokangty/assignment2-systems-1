@@ -191,6 +191,22 @@ class FlashAttentionTritonFull(FlashAttentionTriton):
     """Optional fully tiled GPU backward for long-context training."""
 
     @staticmethod
+    def forward(ctx, q, k, v, is_causal=False):
+        if q.dtype != torch.bfloat16 or q.shape[-1] != 128 or q.shape[-2] < 1024:
+            return FlashAttentionTriton.forward(ctx, q, k, v, is_causal)
+        q, k, v = q.contiguous(), k.contiguous(), v.contiguous()
+        n, d = q.shape[-2:]
+        output = torch.empty_like(q)
+        lse = torch.empty(q.shape[:-1], device=q.device, dtype=torch.float32)
+        with torch.cuda.device(q.device):
+            flash_fwd_kernel[(triton.cdiv(n, 128), q.numel() // (n * d))](
+                q, k, v, output, lse, n, k.shape[-2], d, 128, 128, is_causal, num_warps=8
+            )
+        ctx.save_for_backward(q, k, v, output, lse)
+        ctx.is_causal = is_causal
+        return output
+
+    @staticmethod
     def backward(ctx, do):
         q, k, v, o, ell = ctx.saved_tensors
         if q.shape[-2] != k.shape[-2]:
