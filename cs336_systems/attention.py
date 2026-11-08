@@ -40,7 +40,8 @@ class FlashAttentionPyTorch(torch.autograd.Function):
 
     @staticmethod
     def backward(ctx, do):
-        raise NotImplementedError('Implemented in the flash_backward problem')
+        grads = flash_backward(*ctx.saved_tensors[:3], ctx.saved_tensors[3], do, ctx.saved_tensors[4], ctx.is_causal)
+        return (*grads, None) if len(ctx.needs_input_grad)==4 else grads
 
 
 import triton
@@ -100,4 +101,27 @@ class FlashAttentionTriton(torch.autograd.Function):
 
     @staticmethod
     def backward(ctx, do):
-        raise NotImplementedError('Implemented in the flash_backward problem')
+        grads = flash_backward(*ctx.saved_tensors[:3], ctx.saved_tensors[3], do, ctx.saved_tensors[4], ctx.is_causal)
+        return (*grads, None) if len(ctx.needs_input_grad)==4 else grads
+
+
+@torch.compile(dynamic=True)
+def flash_backward(q, k, v, output, do, lse, is_causal):
+    """Recompute probabilities from L; D is the row-wise dot of dO and O.
+
+    This exercise's compiled dense backward has quadratic transient memory.
+    Only forward and saved activations have FlashAttention's linear memory bound.
+    """
+    qf, kf, vf, dof = q.float(), k.float(), v.float(), do.float()
+    scores = qf @ kf.transpose(-1,-2) / q.shape[-1]**0.5
+    if is_causal:
+        mask = torch.arange(q.shape[-2], device=q.device)[:,None] < torch.arange(k.shape[-2], device=q.device)[None,:]
+        scores = scores.masked_fill(mask, -1e6)
+    p = torch.exp(scores-lse[...,None])
+    delta = (output.float()*dof).sum(-1,keepdim=True)
+    dp = dof @ vf.transpose(-1,-2)
+    ds = p*(dp-delta)
+    dq = ds @ kf / q.shape[-1]**0.5
+    dk = ds.transpose(-1,-2) @ qf / q.shape[-1]**0.5
+    dv = p.transpose(-1,-2) @ dof
+    return dq.to(q.dtype), dk.to(k.dtype), dv.to(v.dtype)
