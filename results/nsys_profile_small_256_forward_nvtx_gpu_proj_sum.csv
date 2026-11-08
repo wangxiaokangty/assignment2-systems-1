@@ -1,0 +1,7 @@
+Range,Style,Total Proj Time (ns),Total Range Time (ns),Range Instances,Proj Avg (ns),Proj Med (ns),Proj Min (ns),Proj Max (ns),Proj StdDev (ns),Total GPU Ops,Avg GPU Ops,Avg Range Lvl,Avg Num Child
+:forward,PushPop,26623189,15341866,1,26623189.0,26623189.0,26623189,26623189,0.0,644,644.0,1.0,12.0
+:measurement,PushPop,26623189,27757644,1,26623189.0,26623189.0,26623189,26623189,0.0,644,644.0,0.0,1.0
+:attention,PushPop,3226960,3147165,12,268913.3,253006.5,251999,443998,55141.3,132,11.0,2.0,3.0
+:attention_softmax,PushPop,1132313,1112329,12,94359.4,91823.5,91136,121247,8484.1,60,5.0,3.0,0.0
+:attention_scores,PushPop,1053275,1319582,12,87772.9,80432.0,79808,169119,25619.4,48,4.0,3.0,0.0
+:attention_values,PushPop,952188,585316,12,79349.0,78031.5,77856,93216,4371.1,24,2.0,3.0,0.0
