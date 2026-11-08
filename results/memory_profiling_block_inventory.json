@@ -1,0 +1,295 @@
+{
+  "context_length": 2048,
+  "baseline_bytes": 508186624,
+  "after_forward_bytes": 7335661568,
+  "after_backward_bytes": 1112449024,
+  "saved_storage_bytes": 6819610624,
+  "parameter_gradient_bytes": 419450880,
+  "input_gradient_bytes": 83886080,
+  "saved_by_producer": [
+    {
+      "producer": "<ViewBackward0",
+      "bytes": 3489660928,
+      "percent": 51.1709703149175
+    },
+    {
+      "producer": "<ExpBackward0",
+      "bytes": 2147483648,
+      "percent": 31.48982788610308
+    },
+    {
+      "producer": "<MulBackward0",
+      "bytes": 503316480,
+      "percent": 7.3804284108054095
+    },
+    {
+      "producer": "<SigmoidBackward0",
+      "bytes": 335544320,
+      "percent": 4.920285607203605
+    },
+    {
+      "producer": "None",
+      "bytes": 90832896,
+      "percent": 1.3319366897625387
+    },
+    {
+      "producer": "<ReshapeAliasBackward0",
+      "bytes": 83886080,
+      "percent": 1.2300714018009014
+    },
+    {
+      "producer": "<UnsafeViewBackward0",
+      "bytes": 83886080,
+      "percent": 1.2300714018009014
+    },
+    {
+      "producer": "<AddBackward0",
+      "bytes": 83886080,
+      "percent": 1.2300714018009014
+    },
+    {
+      "producer": "<SumBackward1",
+      "bytes": 1048576,
+      "percent": 0.015375892522511269
+    },
+    {
+      "producer": "<RsqrtBackward0",
+      "bytes": 65536,
+      "percent": 0.0009609932826569543
+    }
+  ],
+  "storages": [
+    {
+      "shape": [
+        4,
+        32,
+        2048,
+        2048
+      ],
+      "dtype": "torch.float32",
+      "bytes": 2147483648,
+      "producer": "<ExpBackward0"
+    },
+    {
+      "shape": [
+        128,
+        2048,
+        2048
+      ],
+      "dtype": "torch.float32",
+      "bytes": 2147483648,
+      "producer": "<ViewBackward0"
+    },
+    {
+      "shape": [
+        4,
+        2048,
+        10240
+      ],
+      "dtype": "torch.float32",
+      "bytes": 335544320,
+      "producer": "<SigmoidBackward0"
+    },
+    {
+      "shape": [
+        4,
+        2048,
+        10240
+      ],
+      "dtype": "torch.float32",
+      "bytes": 335544320,
+      "producer": "<ViewBackward0"
+    },
+    {
+      "shape": [
+        4,
+        2048,
+        10240
+      ],
+      "dtype": "torch.float32",
+      "bytes": 335544320,
+      "producer": "<ViewBackward0"
+    },
+    {
+      "shape": [
+        4,
+        2048,
+        10240
+      ],
+      "dtype": "torch.float32",
+      "bytes": 335544320,
+      "producer": "<MulBackward0"
+    },
+    {
+      "shape": [
+        1,
+        8192,
+        10240
+      ],
+      "dtype": "torch.float32",
+      "bytes": 335544320,
+      "producer": "<ViewBackward0"
+    },
+    {
+      "shape": [
+        4,
+        2048,
+        2560
+      ],
+      "dtype": "torch.float32",
+      "bytes": 83886080,
+      "producer": "None"
+    },
+    {
+      "shape": [
+        4,
+        2048,
+        2560
+      ],
+      "dtype": "torch.float32",
+      "bytes": 83886080,
+      "producer": "<MulBackward0"
+    },
+    {
+      "shape": [
+        1,
+        8192,
+        2560
+      ],
+      "dtype": "torch.float32",
+      "bytes": 83886080,
+      "producer": "<ViewBackward0"
+    },
+    {
+      "shape": [
+        128,
+        80,
+        2048
+      ],
+      "dtype": "torch.float32",
+      "bytes": 83886080,
+      "producer": "<ReshapeAliasBackward0"
+    },
+    {
+      "shape": [
+        128,
+        2048,
+        80
+      ],
+      "dtype": "torch.float32",
+      "bytes": 83886080,
+      "producer": "<ViewBackward0"
+    },
+    {
+      "shape": [
+        128,
+        2048,
+        80
+      ],
+      "dtype": "torch.float32",
+      "bytes": 83886080,
+      "producer": "<UnsafeViewBackward0"
+    },
+    {
+      "shape": [
+        1,
+        8192,
+        2560
+      ],
+      "dtype": "torch.float32",
+      "bytes": 83886080,
+      "producer": "<ViewBackward0"
+    },
+    {
+      "shape": [
+        4,
+        2048,
+        2560
+      ],
+      "dtype": "torch.float32",
+      "bytes": 83886080,
+      "producer": "<AddBackward0"
+    },
+    {
+      "shape": [
+        4,
+        2048,
+        2560
+      ],
+      "dtype": "torch.float32",
+      "bytes": 83886080,
+      "producer": "<MulBackward0"
+    },
+    {
+      "shape": [
+        1,
+        8192,
+        2560
+      ],
+      "dtype": "torch.float32",
+      "bytes": 83886080,
+      "producer": "<ViewBackward0"
+    },
+    {
+      "shape": [
+        1,
+        2048,
+        2048
+      ],
+      "dtype": "torch.bool",
+      "bytes": 4194304,
+      "producer": "None"
+    },
+    {
+      "shape": [
+        4,
+        32,
+        2048,
+        1
+      ],
+      "dtype": "torch.int64",
+      "bytes": 2097152,
+      "producer": "None"
+    },
+    {
+      "shape": [
+        4,
+        32,
+        2048,
+        1
+      ],
+      "dtype": "torch.float32",
+      "bytes": 1048576,
+      "producer": "<SumBackward1"
+    },
+    {
+      "shape": [
+        2048,
+        40
+      ],
+      "dtype": "torch.float32",
+      "bytes": 655360,
+      "producer": "None"
+    },
+    {
+      "shape": [
+        4,
+        2048,
+        1
+      ],
+      "dtype": "torch.float32",
+      "bytes": 32768,
+      "producer": "<RsqrtBackward0"
+    },
+    {
+      "shape": [
+        4,
+        2048,
+        1
+      ],
+      "dtype": "torch.float32",
+      "bytes": 32768,
+      "producer": "<RsqrtBackward0"
+    }
+  ]
+}

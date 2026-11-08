@@ -1,0 +1,44 @@
+{
+  "config": {
+    "size": "xl",
+    "context_length": 2048,
+    "batch_size": 4,
+    "vocab_size": 10000,
+    "d_model": null,
+    "d_ff": null,
+    "num_layers": null,
+    "num_heads": null
+  },
+  "mode": "forward",
+  "precision": "fp32",
+  "warmup": 0,
+  "steps": 1,
+  "checkpoint_size": 0,
+  "compile_model": false,
+  "device": "NVIDIA A100-SXM4-80GB",
+  "torch": "2.11.0+cu130",
+  "peak_allocated_bytes": 22869993472,
+  "samples": [
+    {
+      "forward_ms": 4081.1467990279198,
+      "loss_ms": 0.0,
+      "backward_ms": 0.0,
+      "optimizer_ms": 0.0038640573620796204,
+      "total_ms": 4081.150663085282
+    }
+  ],
+  "mean": {
+    "forward_ms": 4081.1467990279198,
+    "loss_ms": 0.0,
+    "backward_ms": 0.0,
+    "optimizer_ms": 0.0038640573620796204,
+    "total_ms": 4081.150663085282
+  },
+  "std": {
+    "forward_ms": 0.0,
+    "loss_ms": 0.0,
+    "backward_ms": 0.0,
+    "optimizer_ms": 0.0,
+    "total_ms": 0.0
+  }
+}
