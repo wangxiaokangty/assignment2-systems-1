@@ -1,0 +1,225 @@
+{
+  "world_size": 2,
+  "backend": "nccl",
+  "device": "NVIDIA A100-SXM4-80GB",
+  "config": {
+    "command": "train",
+    "world_size": 2,
+    "backend": "nccl",
+    "warmup": 5,
+    "steps": 10,
+    "mode": "naive",
+    "size": "xl",
+    "sequence": 512,
+    "batch": 4,
+    "bf16": false,
+    "trace": null,
+    "output": "results/naive_ddp_benchmarking.json"
+  },
+  "ranks": [
+    {
+      "parameter_count": 3406809600,
+      "initial_bytes": 13762357248,
+      "initial_peak_bytes": 13762357248,
+      "local_parameter_bytes": 13627238400,
+      "optimizer_state_bytes": 27254476800,
+      "mean_step_ms": 1741.6523691732436,
+      "std_step_ms": 1.3649805453127388,
+      "mean_sync_ms": 103.29919406212866,
+      "samples": [
+        {
+          "step_ms": 1741.50945013389,
+          "sync_ms": 102.65248082578182,
+          "before_optimizer_bytes": 54703514624,
+          "before_optimizer_peak_bytes": 55928913408,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55928913408,
+          "loss": 6.261077404022217
+        },
+        {
+          "step_ms": 1743.0059309117496,
+          "sync_ms": 102.62966342270374,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55929273856,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55929273856,
+          "loss": 5.708026885986328
+        },
+        {
+          "step_ms": 1742.3503790050745,
+          "sync_ms": 103.22380904108286,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55929273856,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55929273856,
+          "loss": 5.036330223083496
+        },
+        {
+          "step_ms": 1740.1524959132075,
+          "sync_ms": 102.29030577465892,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55930322432,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55930322432,
+          "loss": 4.003185749053955
+        },
+        {
+          "step_ms": 1743.4070357121527,
+          "sync_ms": 104.88605313003063,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55929273856,
+          "after_optimizer_bytes": 54703514624,
+          "after_optimizer_peak_bytes": 55929273856,
+          "loss": 4.453298091888428
+        },
+        {
+          "step_ms": 1741.432080976665,
+          "sync_ms": 102.80924895778298,
+          "before_optimizer_bytes": 54703514624,
+          "before_optimizer_peak_bytes": 55928913408,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55928913408,
+          "loss": 2.039301872253418
+        },
+        {
+          "step_ms": 1740.2405119501054,
+          "sync_ms": 102.97805769369006,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55929273856,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55929273856,
+          "loss": 1.1773320436477661
+        },
+        {
+          "step_ms": 1743.7537112273276,
+          "sync_ms": 105.29751004651189,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55929273856,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55929273856,
+          "loss": 0.5386185646057129
+        },
+        {
+          "step_ms": 1741.0573530942202,
+          "sync_ms": 104.12366595119238,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55930322432,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55930322432,
+          "loss": 0.2660338282585144
+        },
+        {
+          "step_ms": 1739.614742808044,
+          "sync_ms": 102.10114577785134,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55929273856,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55929273856,
+          "loss": 0.17731574177742004
+        }
+      ]
+    },
+    {
+      "parameter_count": 3406809600,
+      "initial_bytes": 13762357248,
+      "initial_peak_bytes": 13762357248,
+      "local_parameter_bytes": 13627238400,
+      "optimizer_state_bytes": 27254476800,
+      "mean_step_ms": 1742.3640814609826,
+      "std_step_ms": 1.5527255952001113,
+      "mean_sync_ms": 101.60105931572616,
+      "samples": [
+        {
+          "step_ms": 1742.117740213871,
+          "sync_ms": 101.10197495669127,
+          "before_optimizer_bytes": 54703514624,
+          "before_optimizer_peak_bytes": 55928913408,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55928913408,
+          "loss": 6.058238983154297
+        },
+        {
+          "step_ms": 1743.4472870081663,
+          "sync_ms": 101.11235314980149,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55929273856,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55929273856,
+          "loss": 5.332140922546387
+        },
+        {
+          "step_ms": 1742.1641699038446,
+          "sync_ms": 101.13772982731462,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55929273856,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55929273856,
+          "loss": 4.539116859436035
+        },
+        {
+          "step_ms": 1740.8428159542382,
+          "sync_ms": 101.19574889540672,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55930322432,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55930322432,
+          "loss": 3.822427749633789
+        },
+        {
+          "step_ms": 1745.3063977882266,
+          "sync_ms": 102.41377400234342,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55929273856,
+          "after_optimizer_bytes": 54703514624,
+          "after_optimizer_peak_bytes": 55929273856,
+          "loss": 4.201756954193115
+        },
+        {
+          "step_ms": 1741.9934929348528,
+          "sync_ms": 101.28928627818823,
+          "before_optimizer_bytes": 54703514624,
+          "before_optimizer_peak_bytes": 55928913408,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55928913408,
+          "loss": 2.663151502609253
+        },
+        {
+          "step_ms": 1740.7381562516093,
+          "sync_ms": 101.12788481637836,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55929273856,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55929273856,
+          "loss": 1.5159940719604492
+        },
+        {
+          "step_ms": 1744.3225467577577,
+          "sync_ms": 103.62096130847931,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55929273856,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55929273856,
+          "loss": 0.6416867971420288
+        },
+        {
+          "step_ms": 1742.6204858347774,
+          "sync_ms": 102.21128910779953,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55930322432,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55930322432,
+          "loss": 0.39921504259109497
+        },
+        {
+          "step_ms": 1740.0877219624817,
+          "sync_ms": 100.79959081485868,
+          "before_optimizer_bytes": 54703875072,
+          "before_optimizer_peak_bytes": 55929273856,
+          "after_optimizer_bytes": 54703875072,
+          "after_optimizer_peak_bytes": 55929273856,
+          "loss": 0.2406323254108429
+        }
+      ]
+    }
+  ]
+}
