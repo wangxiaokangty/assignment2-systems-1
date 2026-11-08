@@ -1,0 +1,58 @@
+{
+  "config": {
+    "size": "xl",
+    "context_length": 2048,
+    "batch_size": 4,
+    "vocab_size": 10000,
+    "d_model": null,
+    "d_ff": null,
+    "num_layers": null,
+    "num_heads": null
+  },
+  "mode": "backward",
+  "precision": "fp32",
+  "warmup": 1,
+  "steps": 3,
+  "checkpoint_size": 1,
+  "compile_model": false,
+  "device": "NVIDIA A100-SXM4-80GB",
+  "torch": "2.11.0+cu130",
+  "peak_allocated_bytes": 41035279360,
+  "samples": [
+    {
+      "forward_ms": 3976.9439711235464,
+      "loss_ms": 2.5800741277635098,
+      "backward_ms": 11457.170848734677,
+      "optimizer_ms": 0.003109220415353775,
+      "total_ms": 15436.698003206402
+    },
+    {
+      "forward_ms": 3973.8998296670616,
+      "loss_ms": 2.419480122625828,
+      "backward_ms": 11449.803827796131,
+      "optimizer_ms": 0.003186054527759552,
+      "total_ms": 15426.126323640347
+    },
+    {
+      "forward_ms": 3969.5819029584527,
+      "loss_ms": 2.3358729667961597,
+      "backward_ms": 11448.970621917397,
+      "optimizer_ms": 0.0022407621145248413,
+      "total_ms": 15420.89063860476
+    }
+  ],
+  "mean": {
+    "forward_ms": 3973.47523458302,
+    "loss_ms": 2.445142405728499,
+    "backward_ms": 11451.981766149402,
+    "optimizer_ms": 0.0028453456858793893,
+    "total_ms": 15427.904988483837
+  },
+  "std": {
+    "forward_ms": 3.0205101838282715,
+    "loss_ms": 0.10133267434538455,
+    "backward_ms": 3.684968707844887,
+    "optimizer_ms": 0.0004286543605837232,
+    "total_ms": 6.574746148783238
+  }
+}
